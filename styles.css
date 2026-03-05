@@ -1,0 +1,378 @@
+/* ======================
+   GLOBAL
+====================== */
+:root {
+    --background: hsl(222,47%,6%);
+    --foreground: hsl(210,40%,96%);
+    --card-bg: hsl(222,47%,9%);
+    --primary: hsl(217,91%,60%);
+    --accent: hsl(250, 77%, 34%);
+    --border: hsl(217,30%,18%);
+    --radius: 0.75rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    line-height: 1.6;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("img/fundo.gif") no-repeat center center fixed;
+    background-size: cover;
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: -1;
+}
+
+.section {
+    padding: 5rem 1rem;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ======================
+   NAVBAR
+====================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--foreground);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ======================
+   HERO
+====================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 1rem 4rem;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+}
+
+/* ======================
+   CARDS
+====================== */
+.about-cards {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: var(--radius);
+    width: 220px;
+    text-align: center;
+}
+
+/* ======================
+   GRID
+====================== */
+.repo-grid,
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill {
+    background: var(--card-bg);
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.skill:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+}
+
+.skill i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+/* =======================
+   PROJECT CARDS
+======================= */
+
+.repo-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    transition: 0.3s ease;
+}
+
+.repo-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary);
+}
+
+.repo-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.repo-card a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.repo-card p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* ======================
+   TIMELINE - LINHA DO TEMPO
+====================== */
+
+.timeline-container {
+    position: relative;
+    margin-top: 3rem;
+    padding-left: 2.5rem;
+}
+
+/* Linha vertical */
+.timeline-container::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary), var(--accent));
+}
+
+/* Item da timeline */
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+}
+
+/* Bolinha */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--background);
+    border: 3px solid var(--primary);
+    transition: 0.3s ease;
+}
+
+.timeline-item:hover::before {
+    transform: scale(1.2);
+    border-color: var(--accent);
+}
+
+/* Data / título */
+.timeline-date {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+/* Caixa de descrição */
+.timeline-desc {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    transition: 0.3s ease;
+}
+
+.timeline-desc:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+}
+
+/* ======================
+   FORM
+====================== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 500px;
+    margin: auto;
+}
+
+input, textarea {
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--background);
+    color: var(--foreground);
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn {
+    background: var(--accent);
+    color: white;
+}
+
+.secundary {
+    background: var(--accent);
+    color: white;
+}
+
+/* ======================
+    CONTACT 
+====================== */
+
+.contact-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    text-align: center;
+    max-width: 300px;
+}
+
+.contact-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.contact-info h3 {
+    margin-bottom: 5px;
+}
+
+.contact-email a {
+    color: hsl(0, 0%, 100%);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-email a:hover {
+    text-decoration: underline;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 320px;
+}
+
+/* ======================
+   RESPONSIVO
+====================== */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: var(--card-bg);
+        width: 100%;
+        padding: 1rem;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .section {
+        padding: 3rem 1rem;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+}

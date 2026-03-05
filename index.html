@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miguel Silva Santos | Portfólio</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="#hero" class="text-gradient">&lt;miguel /&gt;</a></div>
+
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#timeline">Jornada</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Olá, eu sou <span class="text-gradient">Miguel</span></h1>
+            <p class="hero-subtitle"><b>Desenvolvedor em formação | Atual estudante de ADS na FACENS (2026)</b></p>
+            <p class="hero-tagline"><i>"Construindo hoje o profissional que quero ser amanhã."</i></p>
+            <div class="hero-buttons">
+                <a href="https://github.com/guelitoo" class="btn primary" target="_blank">Ver Projetos</a>
+                <a href="curriculo.pdf" class="btn secondary" target="_blank">Baixar Currículo</a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+
+        <section id="about" class="section about">
+            <h2>Sobre Mim</h2>
+            <p>Sou um desenvolvedor em formação com foco em back-end e forte interesse em lógica e estrutura. Em 2026,
+                iniciarei a graduação em Análise e Desenvolvimento de Sistemas na FACENS, em Sorocaba.</p>
+
+            <div class="about-cards">
+                <div class="card"><i class="fas fa-server"></i><span>Back-end<br>Java e Spring Boot</span></div>
+                <div class="card"><i class="fas fa-database"></i><span>Banco de Dados<br>SQL</span></div>
+                <div class="card"><i class="fas fa-chart-line"></i><span>Aprendizado Contínuo</span></div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects">
+            <h2>Meus Projetos</h2>
+            <div id="repo-list" class="repo-grid"></div>
+        </section>
+
+        <section id="skills" class="section skills">
+            <h2>Tecnologias & Skills</h2>
+            <div class="skills-grid">
+
+                <div class="skill"><i class="fab fa-html5"></i><span>HTML</span></div>
+                <div class="skill"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+                <div class="skill"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                <div class="skill"><i class="fab fa-java"></i><span>Java</span></div>
+
+                <div class="skill"><i class="fas fa-leaf"></i><span>Spring Boot</span></div>
+                <div class="skill"><i class="fas fa-database"></i><span>SQL</span></div>
+                <div class="skill"><i class="fas fa-network-wired"></i><span>Redes</span></div>
+
+                <div class="skill"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                <div class="skill"><i class="fab fa-github"></i><span>GitHub</span></div>
+
+                <div class="skill"><i class="fas fa-code"></i><span>API REST</span></div>
+                <div class="skill"><i class="fas fa-terminal"></i><span>Lógica de Programação</span></div>
+                <div class="skill"><i class="fas fa-layer-group"></i><span>Estrutura de Dados</span></div>
+
+                <div class="skill"><i class="fas fa-server"></i><span>Back-end</span></div>
+                <div class="skill"><i class="fas fa-project-diagram"></i><span>Modelagem de Dados</span></div>
+                <div class="skill"><i class="fas fa-bug"></i><span>Debugging</span></div>
+
+            </div>
+        </section>
+
+        <section id="timeline" class="section timeline">
+            <h2>Minha Jornada</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024/2025 - Curso Técnico em Desenvolvimento de Sistemas - SENAI Sorocaba
+                    </div>
+                    <div class="timeline-desc">Base sólida em lógica, banco de dados e web.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 - Graduação em ADS - FACENS</div>
+                    <div class="timeline-desc">Início da graduação em Análise e Desenvolvimento de Sistemas.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <h2>Contato</h2>
+
+            <div class="contact-container">
+
+                <!-- Lado esquerdo - Foto + Informações -->
+                <div class="contact-info">
+                    <img src="img/IMG_7426.jpeg" alt="Foto de Miguel Silva Santos" class="contact-photo">
+
+                    <h3>Miguel Silva Santos</h3>
+                    <p>Desenvolvedor em formação | Estudante de ADS</p>
+
+                    <p class="contact-email">
+                        📧 <a href="mailto:m36230989@gmail.com">m36230989@gmail.com</a>
+                    </p>
+                </div>
+
+                <!-- Lado direito - Formulário -->
+                <form action="https://formsubmit.co/m36230989@gmail.com" method="POST" class="contact-form">
+
+                    <input type="text" name="nome" placeholder="Nome" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="mensagem" placeholder="Mensagem" required></textarea>
+
+                    <button type="submit" class="btn primary">Enviar Mensagem</button>
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 guelitoo</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
