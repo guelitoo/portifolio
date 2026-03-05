@@ -65,10 +65,9 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
 
 // ============================
-// FUTURA INTEGRAÇÃO GITHUB API
+// GITHUB API - MOSTRAR APENAS REPOS ESPECÍFICOS
 // ============================
 
-// Exemplo base (caso queira ativar novamente)
 async function loadRepos() {
     try {
         const response = await fetch("https://api.github.com/users/guelitoo/repos");
@@ -77,13 +76,32 @@ async function loadRepos() {
         const repoList = document.getElementById("repo-list");
         if (!repoList) return;
 
-        repos.slice(0, 6).forEach(repo => {
+        // 👇 COLOQUE AQUI APENAS OS REPOSITÓRIOS QUE VOCÊ QUER MOSTRAR
+        const allowedRepos = [
+            "projeto-reobote-final",
+            "PFE1",
+            "PBE2",
+            "PSOF2",
+            "PPDM"
+        ];
+
+        const filteredRepos = repos.filter(repo =>
+            allowedRepos.includes(repo.name)
+        );
+
+        repoList.innerHTML = ""; // limpa antes de renderizar
+
+        filteredRepos.forEach(repo => {
             const div = document.createElement("div");
             div.classList.add("repo-card");
 
             div.innerHTML = `
-                <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
-                <p>${repo.description || "Sem descrição"}</p>
+                <h3>
+                    <a href="${repo.html_url}" target="_blank">
+                        ${repo.name}
+                    </a>
+                </h3>
+                <p>${repo.description || "Projeto desenvolvido por Miguel Silva Santos."}</p>
             `;
 
             repoList.appendChild(div);
@@ -94,5 +112,4 @@ async function loadRepos() {
     }
 }
 
-// Ativar se quiser usar:
 loadRepos();
